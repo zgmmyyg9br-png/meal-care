@@ -3,11 +3,14 @@
 <head>
   <meta charset="UTF-8">
   <title>今日の1日ごはん提案</title>
+
+  <!-- CSS読み込み -->
+  <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
   <div class="app">
-    <h1>今日の1日ごはん提案</h1>
+    <h1>🍽 今日の1日ごはん提案</h1>
 
     <label for="weight">体重（kg）</label>
     <input type="number" id="weight" placeholder="例：50">
@@ -26,14 +29,12 @@
       <option value="hungry">がっつり食べたい</option>
     </select>
 
-    <!-- ★ JSと紐づくボタン -->
     <button id="generate">1日のごはんを考える</button>
 
-    <!-- ★ 結果表示エリア -->
     <div id="result"></div>
   </div>
 
-  <!-- ★ JS読み込み（必ずbodyの一番下） -->
+  <!-- JS読み込み（bodyの最後） -->
   <script src="script.js"></script>
 </body>
 </html>

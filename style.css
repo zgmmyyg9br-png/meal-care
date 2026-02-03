@@ -1,14 +1,18 @@
 body {
-  font-family: Roboto;
-  background: #e0ffff;
+  font-family: Arial, sans-serif;
+  background-color: #e0ffff;
 }
 
 .app {
-  background: lightyellow;
-  max-width: 400px;
-  margin: 30px auto;
+  background-color: #fffde7;
+  max-width: 420px;
+  margin: 40px auto;
   padding: 20px;
   border-radius: 12px;
+}
+
+h1 {
+  text-align: center;
 }
 
 label {
@@ -17,19 +21,27 @@ label {
   font-weight: bold;
 }
 
-input, select, button {
+input,
+select,
+button {
   width: 100%;
   padding: 8px;
   margin-top: 5px;
+  font-size: 14px;
 }
 
 button {
   margin-top: 20px;
-  background: #4caf50;
+  background-color: #4caf50;
   color: white;
   border: none;
   border-radius: 8px;
   font-size: 16px;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: #43a047;
 }
 
 #result {

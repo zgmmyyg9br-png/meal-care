@@ -1,1 +1,25 @@
 # meal-care
+<div class="app">
+  <h1>今日の1日ごはん提案</h1>
+
+  <label>体重（kg）</label>
+  <input type="number" id="weight" placeholder="例：50">
+
+  <label>普段どんな食事が多い？</label>
+  <select id="habit">
+    <option value="light">軽め・少食</option>
+    <option value="normal">普通</option>
+    <option value="heavy">炭水化物・外食多め</option>
+  </select>
+
+  <label>今日の気分</label>
+  <select id="mood">
+    <option value="healthy">健康的にしたい</option>
+    <option value="easy">楽したい</option>
+    <option value="hungry">がっつり食べたい</option>
+  </select>
+
+  <button id="generate">1日のごはんを考える</button>
+
+  <div id="result"></div>
+</div>

@@ -1,9 +1,13 @@
-document.getElementById("generate").addEventListener("click", () => {
+// ★ ボタンとJSを紐づける
+document.getElementById("generate").addEventListener("click", generateMenu);
+
+function generateMenu() {
   const weight = Number(document.getElementById("weight").value);
   const habit = document.getElementById("habit").value;
   const mood = document.getElementById("mood").value;
   const result = document.getElementById("result");
 
+  // 入力チェック
   if (!weight) {
     result.innerHTML = "体重を入力してね！";
     return;
@@ -32,30 +36,31 @@ document.getElementById("generate").addEventListener("click", () => {
   };
 
   const menu = menus[mood];
-  const totalCal = menu.breakfast[1] + menu.lunch[1] + menu.dinner[1];
+  const totalCal =
+    menu.breakfast[1] + menu.lunch[1] + menu.dinner[1];
 
+  // 結果表示
   result.innerHTML = `
     <h3>🍳 朝</h3>
-    ${menu.breakfast[0]}（${menu.breakfast[1]}kcal）
+    ${menu.breakfast[0]}（${menu.breakfast[1]} kcal）
 
     <h3>🍚 昼</h3>
-    ${menu.lunch[0]}（${menu.lunch[1]}kcal）
+    ${menu.lunch[0]}（${menu.lunch[1]} kcal）
 
     <h3>🍲 夜</h3>
-    ${menu.dinner[0]}（${menu.dinner[1]}kcal）
+    ${menu.dinner[0]}（${menu.dinner[1]} kcal）
 
     <hr>
 
-    <p><strong>🔥 1日の合計カロリー：</strong>${totalCal} kcal</p>
+    <p><strong>🔥 1日の合計：</strong>${totalCal} kcal</p>
     <p><strong>🎯 あなたの目安：</strong>${baseCal} kcal</p>
 
     <p><strong>💡 アドバイス：</strong><br>
-    ${totalCal > baseCal ? "今日は少し多め。明日は炭水化物を減らそう。" : "バランス良し！たんぱく質を意識できてるよ。"}
-    </p>
-
-    <p><strong>📖 簡単レシピ（夜）</strong><br>
-    材料：豚肉・キャベツ・ポン酢<br>
-    作り方：豚肉を茹でて野菜にのせ、ポン酢をかけるだけ
+      ${
+        totalCal > baseCal
+          ? "今日は少し多め。明日は炭水化物を控えめにしよう。"
+          : "バランス良し！この調子でいこう。"
+      }
     </p>
   `;
-});
+}
